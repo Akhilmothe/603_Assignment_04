@@ -10,9 +10,13 @@ Code Explanation:
 1. Import Libraries
 
 requests: Used to make HTTP requests to the ISS location API.
+
 time: Used for time-related operations, such as waiting between data fetches.
+
 folium: A Python library for creating interactive maps.
+
 IPython.display: Used to display the generated map in Jupyter Notebook.
+
 pandas: A popular data manipulation and analysis library.
 
 2. Create an Empty DataFrame
