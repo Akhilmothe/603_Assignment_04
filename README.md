@@ -1,20 +1,49 @@
 ## Tracking the NASA Satellite
 ![image](https://github.com/Akhilmothe/603_Assignment_04/assets/114513479/8815187c-8cf4-42d5-a102-70479509c642)
-For this assignment, we will be working on streaming data which is satellite location coordinates being provided by NASA.
 
-The data is in the following format:
+1: Introduction
+In this code, we are tracking the International Space Station (ISS) using its real-time location data obtained from the "http://api.open-notify.org/iss-now.json" API. We will fetch the ISS's latitude and longitude at regular intervals, plot its location on a map, and save the data to a DataFrame and a CSV file. Additionally, we generate an interactive map in HTML format to visualize the ISS's path over a one-hour period.
 
-{"timestamp": 1667492679, "iss_position": {"longitude": "-56.8155", "latitude": "-42.5979"}, "message": "success"}
+Code Explanation:
 
-Data can be accessed from http://api.open-notify.org/iss-now.json
+1. Import Libraries
 
-The link can be thought of as the producer as it will do producer job.
+requests: Used to make HTTP requests to the ISS location API.
+time: Used for time-related operations, such as waiting between data fetches.
+folium: A Python library for creating interactive maps.
+IPython.display: Used to display the generated map in Jupyter Notebook.
+pandas: A popular data manipulation and analysis library.
+2. Create an Empty DataFrame
 
-Write the consumer to connect and fetch data. In the consumer, you have to write the code which takes the data from producer and uses the location coordinates to plot the satellite location on the world map.
+We create an empty pandas DataFrame named iss_data_df to store latitude and longitude values.
+3. Define a Function fetch_and_plot_iss_location_for_one_hour()
 
-The streaming interval should be 5 seconds. The producer should run for an hour. The graph will show the satellite tracking for 1 hr.
+This function fetches the ISS's location data, plots it on a map, and saves the data.
+4. Fetch and Plot ISS Location for One Hour
 
-P.S.: Keeping in mind that satellite travels very fast, the graph will have more than half of map covered with satellite track
+The function fetches data from the ISS API and plots its location on a Folium map for one hour (3600 seconds).
+It starts by creating an empty map with specified boundaries and zoom level.
+5. Data Fetch Loop
+
+Inside a loop that runs for one hour, the code does the following:
+Makes a request to the ISS location API and extracts the latitude and longitude.
+Adds a marker on the map with a tooltip displaying the current latitude and longitude.
+Connects the current location to the previous location with a blue line.
+Appends latitude and longitude values to the data_to_append list.
+Sleeps for 5 seconds before fetching the next data.
+6. Data Storage
+
+The latitude and longitude data collected during the loop are appended to the iss_data_df DataFrame.
+The map is saved as an HTML file named "iss_location_tracking.html."
+7. Save Data to CSV
+
+The iss_data_df DataFrame is saved to a CSV file named "iss_location_data.csv."
+8. Display the Map
+
+Finally, the generated HTML map is displayed as an iframe in the Jupyter Notebook.
+By running this code, you can track the ISS's path for one hour, visualize it on an interactive map, and store the latitude and longitude data in a CSV file for further analysis.
 
 
-## Execution:
+
+
+
