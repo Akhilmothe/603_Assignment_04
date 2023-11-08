@@ -1,7 +1,8 @@
 ## Tracking the NASA Satellite
 ![image](https://github.com/Akhilmothe/603_Assignment_04/assets/114513479/8815187c-8cf4-42d5-a102-70479509c642)
 
-1: Introduction
+Introduction:
+
 In this code, we are tracking the International Space Station (ISS) using its real-time location data obtained from the "http://api.open-notify.org/iss-now.json" API. We will fetch the ISS's latitude and longitude at regular intervals, plot its location on a map, and save the data to a DataFrame and a CSV file. Additionally, we generate an interactive map in HTML format to visualize the ISS's path over a one-hour period.
 
 Code Explanation:
