@@ -15,3 +15,6 @@ Write the consumer to connect and fetch data. In the consumer, you have to write
 The streaming interval should be 5 seconds. The producer should run for an hour. The graph will show the satellite tracking for 1 hr.
 
 P.S.: Keeping in mind that satellite travels very fast, the graph will have more than half of map covered with satellite track
+
+
+## Execution:
